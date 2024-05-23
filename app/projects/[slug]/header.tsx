@@ -12,7 +12,6 @@ export const Header: React.FC<Props> = ({ project, views }) => {
   const ref = useRef<HTMLElement>(null);
   const [isIntersecting, setIntersecting] = useState(true);
 
-  const links: { label: string; href: string }[] = [];
   useEffect(() => {
     if (!ref.current) return;
     const observer = new IntersectionObserver(([entry]) =>
@@ -90,6 +89,9 @@ export const Header: React.FC<Props> = ({ project, views }) => {
             </h1>
             <p className="mt-6 text-lg leading-8 text-zinc-300">
               {project.description}
+            </p>
+            <p className="mt-2 text-sm leading-8 text-zinc-300">
+              {project.reles_date}
             </p>
           </div>
 

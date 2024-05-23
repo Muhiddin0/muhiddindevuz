@@ -9,7 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     data: {
       projects: Array<Project>;
     };
-  } = await instance.get("/moderator/1/projects");
+  } = await instance.get(`/moderator/${process.env.MODERATOR_ID}/projects`);
   let projects = data["projects"].map((project) => ({
     url: "projects/" + project.id,
     lastModified: new Date(project["reles_date"]).toISOString(),

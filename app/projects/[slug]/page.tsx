@@ -1,5 +1,9 @@
+import { notFound } from "next/navigation";
+
+import { Project } from "@/app/lib/types";
 import Gallery from "./gallery";
 import { Header } from "./header";
+import { instance } from "@/app/services";
 import "./mdx.css";
 
 export const revalidate = 60;
@@ -11,46 +15,36 @@ type Props = {
 };
 
 export default async function PostPage({ params }: Props) {
-  let project = {
-    id: 1,
-    title: "csdc",
-    description: "sdcdscsd",
-    reles_date: "2024-05-22",
-    link: "http://google.com",
-    technology_list: [
-      {
-        id: 1,
-        skils: 1,
-      },
-    ],
-    images: [
-      {
-        id: 1,
-        image:
-          "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-      },
-      {
-        id: 1,
-        image:
-          "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-      },
-      {
-        id: 1,
-        image:
-          "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-      },
-    ],
-    videos: [
-      {
-        id: 1,
-        video_url: "https://t.me/black_hole_225",
-      },
-    ],
-  };
-  return (
-    <div className="bg-zinc-50 min-h-screen">
-      <Header project={project} views={0} />
-      <Gallery title={project.title} images={project.images} />
-    </div>
-  );
+  try {
+    let {
+      data: project,
+    }: {
+      data: Project;
+    } = await instance.get(
+      `/moderator/${process.env.MODERATOR_ID}/projects/${params.slug}`
+    );
+
+    return (
+      <div className="bg-zinc-50 min-h-screen">
+        <Header project={project} views={0} />
+
+        <div className="container mx-auto">
+          {project.videos.map((video) => (
+            <iframe
+              src={video.video_url}
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              className="w-[80%] h-[150px] min-[291px]:h-[200px] min-[500px]:h-[300px] min-[600px]:h-[400px] xl:h-[500px] mx-auto my-5"
+              // @ts-ignore
+              allowfullscreen
+            ></iframe>
+          ))}
+        </div>
+
+        <Gallery title={project.title} images={project.images} />
+      </div>
+    );
+  } catch (error) {
+    notFound();
+  }
 }

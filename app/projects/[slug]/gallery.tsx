@@ -27,7 +27,7 @@ export default function Gallery({ images, title }: Props) {
   return (
     <div className="container mx-auto pt-6 md:pt-10 pb-16">
       <LightGallery onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
-        {images.map(({ id, image }, index) => (
+        {images?.map(({ id, image }, index) => (
           <a key={id} href={image} className="block mb-16">
             <img
               className="shadow-xl mx-auto w-[80%]"

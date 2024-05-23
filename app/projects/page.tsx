@@ -1,95 +1,19 @@
-import Link from "next/link";
 import React from "react";
-import { Project, allProjects } from "contentlayer/generated";
 import { Navigation } from "../components/nav";
 import { Card } from "../components/card";
 import { Article } from "./article";
-import { Redis } from "@upstash/redis";
-import { Eye } from "lucide-react";
+import { instance } from "../services";
+import { Project } from "../lib/types";
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
-  let projects = [
-    {
-      id: 1,
-      title: "csdc",
-      description: "sdcdscsd",
-      reles_date: "2024-05-22",
-      link: "http://google.com",
-      technology_list: [
-        {
-          id: 1,
-          skils: 1,
-        },
-      ],
-      images: [
-        {
-          id: 1,
-          image:
-            "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-        },
-      ],
-      videos: [
-        {
-          id: 1,
-          video_url: "https://t.me/black_hole_225",
-        },
-      ],
-    },
-    {
-      id: 1,
-      title: "csdc",
-      description: "sdcdscsd",
-      reles_date: "2024-05-22",
-      link: "http://google.com",
-      technology_list: [
-        {
-          id: 1,
-          skils: 1,
-        },
-      ],
-      images: [
-        {
-          id: 1,
-          image:
-            "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-        },
-      ],
-      videos: [
-        {
-          id: 1,
-          video_url: "https://t.me/black_hole_225",
-        },
-      ],
-    },
-    {
-      id: 1,
-      title: "csdc",
-      description: "sdcdscsd",
-      reles_date: "2024-05-22",
-      link: "http://google.com",
-      technology_list: [
-        {
-          id: 1,
-          skils: 1,
-        },
-      ],
-      images: [
-        {
-          id: 1,
-          image:
-            "http://195.161.68.240:1000/media/projects/Screenshot_20_6GiW1Zi.png",
-        },
-      ],
-      videos: [
-        {
-          id: 1,
-          video_url: "https://t.me/black_hole_225",
-        },
-      ],
-    },
-  ];
-
+  let {
+    data,
+  }: {
+    data: {
+      projects: Array<Project>;
+    };
+  } = await instance.get(`/moderator/${process.env.MODERATOR_ID}/projects`);
   return (
     <div className="relative pb-16">
       <Navigation />
@@ -105,7 +29,7 @@ export default async function ProjectsPage() {
         <div className="w-full h-px bg-zinc-800" />
 
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
-          {projects.map((project) => (
+          {data.projects.map((project) => (
             <Card key={project.id}>
               <Article project={project} views={0} />
             </Card>
