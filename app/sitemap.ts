@@ -3,6 +3,8 @@ import { instance } from "./services";
 import { Project } from "./lib/types";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const BASE_URL = "http://muhiddindev.uz";
+
   let {
     data,
   }: {
@@ -11,21 +13,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     };
   } = await instance.get(`/moderator/${process.env.MODERATOR_ID}/projects`);
   let projects = data["projects"].map((project) => ({
-    url: "projects/" + project.id,
+    url: BASE_URL + "/projects/" + project.id,
     lastModified: new Date(project["reles_date"]).toISOString(),
   }));
 
   return [
     {
-      url: "/",
+      url: BASE_URL,
       lastModified: new Date().toISOString(),
     },
     {
-      url: "projects/",
+      url: BASE_URL + "/projects/",
       lastModified: new Date().toISOString(),
     },
     {
-      url: "contact/",
+      url: BASE_URL + "/contact/",
       lastModified: new Date().toISOString(),
     },
     ...projects,
