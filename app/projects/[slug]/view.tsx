@@ -1,17 +1,15 @@
 "use client";
 
+import { instance } from "@/app/services";
 import { useEffect } from "react";
 
-export const ReportView: React.FC<{ slug: string }> = ({ slug }) => {
-	useEffect(() => {
-		fetch("/api/incr", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({ slug }),
-		});
-	}, [slug]);
+export const ReportView: React.FC<{
+  slug: string;
+  moderator_id: number | string;
+}> = ({ slug, moderator_id }) => {
+  useEffect(() => {
+    instance.post(`/moderator/${moderator_id}/projects/${slug}/increment`);
+  }, [slug]);
 
-	return null;
+  return null;
 };

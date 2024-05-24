@@ -5,6 +5,7 @@ import Gallery from "./gallery";
 import { Header } from "./header";
 import { instance } from "@/app/services";
 import "./mdx.css";
+import { ReportView } from "./view";
 
 export const revalidate = 60;
 
@@ -15,19 +16,24 @@ type Props = {
 };
 
 export default async function PostPage({ params }: Props) {
+  const MODERATOR_ID = process.env.MODERATOR_ID;
+
   try {
+    instance.post(
+      `/moderator/${MODERATOR_ID}/projects/${params.slug}/increment`
+    );
+
     let {
       data: project,
     }: {
       data: Project;
     } = await instance.get(
-      `/moderator/${process.env.MODERATOR_ID}/projects/${params.slug}`
+      `/moderator/${MODERATOR_ID}/projects/${params.slug}`
     );
 
     return (
       <div className="bg-zinc-50 min-h-screen">
-        <Header project={project} views={0} />
-
+        <Header project={project} />
         <div className="container mx-auto">
           {project.videos.map((video) => (
             <iframe

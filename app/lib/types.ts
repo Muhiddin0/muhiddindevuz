@@ -7,6 +7,7 @@ export interface Project {
   technology_list: Technology[];
   images: ProjectImage[];
   videos: Video[];
+  views: number;
 }
 
 export interface Technology {

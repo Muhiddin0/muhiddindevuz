@@ -31,7 +31,7 @@ export default async function ProjectsPage() {
         <div className="grid grid-cols-1 gap-8 mx-auto lg:grid-cols-2 ">
           {data.projects.map((project) => (
             <Card key={project.id}>
-              <Article project={project} views={0} />
+              <Article project={project} />
             </Card>
           ))}
         </div>
