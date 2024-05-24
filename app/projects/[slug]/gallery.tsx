@@ -31,6 +31,8 @@ export default function Gallery({ images, title }: Props) {
         {images?.map(({ id, image }, index) => (
           <a key={id} href={image} className="block mb-16">
             <Image
+              width={1800}
+              height={800}
               className="shadow-xl mx-auto w-[80%]"
               alt={`${index + 1}-${title} | Muhiddindev.uz`}
               src={image}

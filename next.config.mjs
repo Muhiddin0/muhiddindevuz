@@ -7,7 +7,7 @@ const nextConfig = {
     mdxRs: true,
   },
   images: {
-    domains: ["http://cdn.muhiddindev.uz"],
+    domains: ["cdn.muhiddindev.uz"],
   },
 };
 
