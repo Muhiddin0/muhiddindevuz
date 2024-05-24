@@ -13,6 +13,7 @@ import "lightgallery/css/lg-thumbnail.css";
 import lgThumbnail from "lightgallery/plugins/thumbnail";
 import lgZoom from "lightgallery/plugins/zoom";
 import { ProjectImage } from "@/app/lib/types";
+import Image from "next/image";
 
 type Props = {
   images: ProjectImage[];
@@ -29,7 +30,7 @@ export default function Gallery({ images, title }: Props) {
       <LightGallery onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
         {images?.map(({ id, image }, index) => (
           <a key={id} href={image} className="block mb-16">
-            <img
+            <Image
               className="shadow-xl mx-auto w-[80%]"
               alt={`${index + 1}-${title} | Muhiddindev.uz`}
               src={image}
