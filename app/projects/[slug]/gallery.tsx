@@ -37,7 +37,7 @@ export default function Gallery({ images, title }: Props) {
             )}
             className="block mb-16"
           >
-            <Image
+            <img
               width={1800}
               height={800}
               className="shadow-xl mx-auto w-[80%]"
