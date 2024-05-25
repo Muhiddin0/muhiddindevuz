@@ -4,6 +4,7 @@ import { Card } from "../components/card";
 import { Article } from "./article";
 import { instance } from "../services";
 import { Project } from "../lib/types";
+import { MODERATOR_ID } from "../lib/config";
 
 export const revalidate = 60;
 export default async function ProjectsPage() {
@@ -13,7 +14,7 @@ export default async function ProjectsPage() {
     data: {
       projects: Array<Project>;
     };
-  } = await instance.get(`/moderator/${process.env.MODERATOR_ID}/projects`);
+  } = await instance.get(`/moderator/${MODERATOR_ID}/projects`);
   return (
     <div className="relative pb-16">
       <Navigation />

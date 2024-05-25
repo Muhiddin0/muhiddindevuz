@@ -5,7 +5,7 @@ import Gallery from "./gallery";
 import { Header } from "./header";
 import { instance } from "@/app/services";
 import "./mdx.css";
-import { ReportView } from "./view";
+import { MODERATOR_ID } from "@/app/lib/config";
 
 export const revalidate = 60;
 
@@ -16,8 +16,6 @@ type Props = {
 };
 
 export default async function PostPage({ params }: Props) {
-  const MODERATOR_ID = process.env.MODERATOR_ID;
-
   try {
     instance.post(
       `/moderator/${MODERATOR_ID}/projects/${params.slug}/increment`

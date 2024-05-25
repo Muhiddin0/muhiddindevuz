@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 import { instance } from "./services";
 import { Project } from "./lib/types";
+import { MODERATOR_ID } from "./lib/config";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const BASE_URL = "http://muhiddindev.uz";
@@ -11,7 +12,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     data: {
       projects: Array<Project>;
     };
-  } = await instance.get(`/moderator/${process.env.MODERATOR_ID}/projects`);
+  } = await instance.get(`/moderator/${MODERATOR_ID}/projects`);
   let projects = data["projects"].map((project) => ({
     url: BASE_URL + "/projects/" + project.id,
     lastModified: new Date(project["reles_date"]).toISOString(),
