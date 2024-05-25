@@ -6,7 +6,6 @@ import { instance } from "../services";
 import { Project } from "../lib/types";
 import { MODERATOR_ID } from "../lib/config";
 
-export const revalidate = 60;
 export default async function ProjectsPage() {
   let {
     data,
