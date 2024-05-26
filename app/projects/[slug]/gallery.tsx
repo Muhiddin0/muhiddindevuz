@@ -29,23 +29,13 @@ export default function Gallery({ images, title }: Props) {
     <div className="container mx-auto pt-6 md:pt-10 pb-16">
       <LightGallery onInit={onInit} speed={500} plugins={[lgThumbnail, lgZoom]}>
         {images?.map(({ id, image }, index) => (
-          <a
-            key={id}
-            href={image.replace(
-              "http://195.161.68.240:1000/",
-              "https://cdn.muhiddindev.uz/"
-            )}
-            className="block mb-16"
-          >
+          <a key={id} href={image} className="block mb-16">
             <img
               width={1800}
               height={800}
               className="shadow-xl mx-auto w-[80%]"
               alt={`${index + 1}-${title} | Muhiddindev.uz`}
-              src={image.replace(
-                "http://195.161.68.240:1000/",
-                "https://cdn.muhiddindev.uz/"
-              )}
+              src={image}
             />
           </a>
         ))}
