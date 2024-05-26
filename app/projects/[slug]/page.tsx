@@ -15,34 +15,34 @@ type Props = {
   };
 };
 
-export async function generateMetadata({ params }: Props) {
-  let {
-    data: project,
-  }: {
-    data: Project;
-  } = await instance.get(`/moderator/${MODERATOR_ID}/projects/${params.slug}`);
+// export async function generateMetadata({ params }: Props) {
+//   let {
+//     data: project,
+//   }: {
+//     data: Project;
+//   } = await instance.get(`/moderator/${MODERATOR_ID}/projects/${params.slug}`);
 
-  return {
-    title: project.title,
-    description: project.description,
-    url: "https://muhddindev.uz/projects/" + params.slug,
-    images: project.images.map((image) => ({
-      url: image.image,
-      width: 1920,
-      height: 1080,
-    })),
-    openGraph: {
-      title: project.title,
-      description: project.description,
-      url: "https://muhddindev.uz/projects/" + params.slug,
-      images: project.images.map((image) => ({
-        url: image.image,
-        width: 1920,
-        height: 1080,
-      })),
-    },
-  };
-}
+//   return {
+//     title: project.title,
+//     description: project.description,
+//     url: "https://muhddindev.uz/projects/" + params.slug,
+//     images: project.images.map((image) => ({
+//       url: image.image,
+//       width: 1920,
+//       height: 1080,
+//     })),
+//     openGraph: {
+//       title: project.title,
+//       description: project.description,
+//       url: "https://muhddindev.uz/projects/" + params.slug,
+//       images: project.images.map((image) => ({
+//         url: image.image,
+//         width: 1920,
+//         height: 1080,
+//       })),
+//     },
+//   };
+// }
 
 export default async function PostPage({ params }: Props) {
   try {
