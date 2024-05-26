@@ -16,10 +16,6 @@ type Props = {
 };
 
 export async function generateMetadata({ params }: Props) {
-  await instance.post(
-    `/moderator/${MODERATOR_ID}/projects/${params.slug}/increment`
-  );
-
   let {
     data: project,
   }: {

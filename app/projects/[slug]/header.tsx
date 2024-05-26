@@ -30,7 +30,7 @@ export const Header: React.FC<Props> = ({ project }) => {
         className={`fixed inset-x-0 top-0 z-50 backdrop-blur lg:backdrop-blur-none duration-200 border-b lg:bg-transparent ${
           isIntersecting
             ? "bg-zinc-900/0 border-transparent"
-            : "bg-white/10  border-zinc-200 lg:border-transparent"
+            : "bg-white/10 border-zinc-200 lg:border-transparent"
         }`}
       >
         <div className="container flex flex-row-reverse items-center justify-between p-6 mx-auto">
@@ -43,7 +43,7 @@ export const Header: React.FC<Props> = ({ project }) => {
                   : "text-zinc-600 hover:text-zinc-900"
               } `}
             >
-              <Eye className="w-5 h-5" />{" "}
+              <Eye className="w-5 h-5" />
               {Intl.NumberFormat("en-US", { notation: "compact" }).format(
                 project.views
               )}
