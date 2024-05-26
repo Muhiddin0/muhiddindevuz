@@ -78,6 +78,9 @@ export default async function PostPage({ params }: Props) {
       </div>
     );
   } catch (error) {
+    console.log(error);
+    console.log(`/moderator/${MODERATOR_ID}/projects/${params.slug}/increment`);
+
     notFound();
   }
 }
