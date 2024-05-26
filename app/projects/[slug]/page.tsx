@@ -35,6 +35,16 @@ export async function generateMetadata({ params }: Props) {
       width: 1920,
       height: 1080,
     })),
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: "https://muhddindev.uz/projects/" + params.slug,
+      images: project.images.map((image) => ({
+        url: image.image,
+        width: 1920,
+        height: 1080,
+      })),
+    },
   };
 }
 
