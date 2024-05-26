@@ -1,6 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "./components/particles";
+import Image from "next/image";
+
+import coffee from "@/assets/Buy Me a Coffee.svg";
 
 const navigation = [
   { name: "Loyihalar", href: "/projects" },
@@ -9,7 +12,7 @@ const navigation = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
+    <div className="px-4 flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
       <nav className="my-16 animate-fade-in">
         <ul className="flex items-center justify-center gap-4">
           {navigation.map((item) => (
@@ -45,6 +48,16 @@ export default function Home() {
           </Link>{" "}
           tomonidan yaratildi. Website, Telegra, bot, Ios, Android
         </h2>
+
+        <button className="mt-2">
+          <Image
+            className="w-[135px]"
+            src={coffee}
+            alt="Buy me a coffee"
+            width={100}
+            height={100}
+          />
+        </button>
       </div>
     </div>
   );
