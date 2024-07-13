@@ -17,5 +17,5 @@ export const siteMetadata = {
   twitter: "https://twitter.com/muhiddin0",
   linkedin: "www.linkedin.com/in/muhiddin-kabraliev-a9718b2a8",
   locale: "uz-UZ",
-  googleSiteVerification: "WhuIN7VbLbuNQVkWmOPbL9oFqt-JGb1b7_9mO0sm98c",  
+  googleSiteVerification: "WhuIN7VbLbuNQVkWmOPbL9oFqt-JGb1b7_9mO0sm98c",
 };

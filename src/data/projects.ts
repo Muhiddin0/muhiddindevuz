@@ -1,16 +1,16 @@
 import { type ProjectCardProps } from "@/components/projects/project-card";
 import { type ProjectShowcaseListItem } from "@/components/projects/project-showcase-list";
-import { siteMetadata } from "@/data/siteMetaData.mjs";
 
 export const PROJECT_SHOWCASE: ProjectShowcaseListItem[] = [
   {
-    index: 0,
-    title: "Json Tree",
+    index: 1,
+    title: "3D Mars Shari",
     href: "/projects",
-    tags: ["Nextjs", "Tailwindcss", "Monaco Editor", "Vercel"],
+    tags: ["Threejs", "WEBgl", "mars", "nodejs"],
     image: {
-      LIGHT: "/images/projects/jsontreeLight.webp",
-      DARK: "/images/projects/jsontreeDark.webp",
+      LIGHT:
+        "https://lh3.google.com/u/0/d/1rEyRtMWTUyRieuy2czTjEs4xNiNrIyTZ=w1607-h868-iv1",
+      DARK: "https://lh3.google.com/u/0/d/1rEyRtMWTUyRieuy2czTjEs4xNiNrIyTZ=w1607-h868-iv1",
     },
   },
 ];

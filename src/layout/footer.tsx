@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-8 rounded-2xl bg-accent p-8 text-background sm:p-12 md:gap-12 lg:p-20">
         <div className="text-center">
           <span className="inline-block rounded-full bg-background px-3 py-1 text-xs font-semibold uppercase text-accent md:text-sm lg:text-base">
-            Bog'lanish
+            Bog&apos;lanish
           </span>
         </div>
         <a
