@@ -3,7 +3,7 @@ import { type ProjectShowcaseListItem } from "@/components/projects/project-show
 
 export const PROJECT_SHOWCASE: ProjectShowcaseListItem[] = [
   {
-    index: 1,
+    index: 0,
     title: "3D Mars Shari",
     href: "/projects",
     tags: ["Threejs", "WEBgl", "mars", "nodejs"],
