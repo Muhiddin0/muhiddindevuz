@@ -15,14 +15,13 @@ export default function Home() {
     <>
       <CursorTrailCanvas className="pointer-events-none fixed inset-0 -z-10 h-full w-full" />
       <NextSeo
-        title="Muhiddin | React and Frontend Developer"
-        description="Explore the professional portfolio of Muhiddin, a skilled React and Frontend Developer with 2 years of hands-on experience. Discover innovative projects, expertise in modern web technologies, and a passion for creating seamless user experiences."
+        title={`${siteMetadata.title} | ${siteMetadata.author}`}
+        description={siteMetadata.description}
         canonical={siteMetadata.siteUrl}
         openGraph={{
           url: siteMetadata.siteUrl,
-          title: "Muhiddin - React and Frontend Developer Portfolio",
-          description:
-            "Dive into the world of web development with Muhiddin. Discover a React and Frontend Developer with 2 years of expertise, showcasing cutting-edge projects and a commitment to crafting exceptional user interfaces.",
+          title: `${siteMetadata.title} | ${siteMetadata.author}`,
+          description: siteMetadata.description,
           images: [
             {
               url: `${siteMetadata.siteUrl}${siteMetadata.twitterImage}`,
@@ -38,8 +37,7 @@ export default function Home() {
         additionalMetaTags={[
           {
             property: "keywords",
-            content:
-              "React Developer, Frontend Developer, Web Developer, JavaScript, HTML, CSS, Portfolio, UI/UX, React.js, Frontend Development, Web Development, JavaScript Developer, Responsive Design",
+            content: siteMetadata.content,
           },
         ]}
       />

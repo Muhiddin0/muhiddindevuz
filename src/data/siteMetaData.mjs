@@ -2,7 +2,10 @@ export const siteMetadata = {
   title: "Muhiddindev",
   author: "Muhiddin Kabraliev",
   headerTitle: "Muhiddindev",
-  description: "Fullsatck developer in Uzbekistan, Fergana",
+  description:
+    "Explore the professional portfolio of Muhiddin, a skilled React and Frontend Developer with 2 years of hands-on experience. Discover innovative projects, expertise in modern web technologies, and a passion for creating seamless user experiences.",
+  content:
+    "React Developer, Frontend Developer, Web Developer, JavaScript, HTML, CSS, Portfolio, UI/UX, React.js, Frontend Development, Web Development, JavaScript Developer, Responsive Design",
   language: "uz",
   theme: "light",
   siteName: "muhiddindev.uz",
