@@ -4,19 +4,19 @@ import { AnimatePresence } from "framer-motion";
 
 import FadeUp from "@/animation/fade-up";
 import FadeRight from "@/animation/fade-right";
-import heroProfileImg from "@/public/images/heroProfile.png";
+import heroProfileImg from "@/public/images/Muhiddindev-unremove-backgrund.png";
 
 export default function AboutHero() {
   return (
     <div className="mx-auto mt-0 flex max-w-7xl flex-col items-center gap-6 px-6 pt-20 text-center sm:px-14 md:mt-20 md:px-20 lg:mt-0 lg:flex-row lg:text-left">
-      <div className=" relative w-full sm:w-1/2 md:w-2/3 lg:inline-block lg:h-full lg:w-1/2">
+      <div className="relative w-full  sm:w-1/2 md:w-2/3 lg:inline-block lg:h-full lg:w-1/2">
         <AnimatePresence>
           <FadeUp key="hero-image" duration={0.6}>
             <Image
               src={heroProfileImg}
               width={100}
               height={100}
-              className="h-auto w-full px-0 xl:px-16"
+              className="m-auto rounded-full sm:w-1/2 md:w-2/3 lg:w-1/2"
               alt="hero image"
               unoptimized
             />
@@ -24,7 +24,7 @@ export default function AboutHero() {
               src={heroProfileImg}
               width={100}
               height={100}
-              className="absolute top-0 -z-10 h-auto w-full scale-110 px-0 blur-3xl xl:px-16"
+              className="absolute left-[50%] top-0 -z-10 translate-x-[-50%] scale-110 rounded-full px-0 blur-3xl sm:w-1/2 md:w-2/3 lg:w-1/2"
               alt="hero image"
               unoptimized
             />

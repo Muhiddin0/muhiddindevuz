@@ -15,7 +15,7 @@ export const siteMetadata = {
   image: "/static/homepage.png",
   twitterImage: "/static/homepage.png",
   socialBanner: "/static/homepage.png",
-  email: "kabraliev2005@gmail.com",
+  email: "contact@muhiddindev.uz",
   github: "https://github.com/muhiddin0",
   twitter: "https://twitter.com/muhiddin0",
   linkedin: "www.linkedin.com/in/muhiddin-kabraliev-a9718b2a8",

@@ -13,8 +13,8 @@ import {
 import { type MailSentToastState } from "@/components/contact-form/contact-mail-toast";
 
 export const mailValidationSchema = Yup.object({
-  email: Yup.string().email("Invalid email").required("Email required"),
   name: Yup.string().required("Name required"),
+  email: Yup.string().email("Invalid email").required("Email required"),
   subject: Yup.string().required("Subject required"),
   message: Yup.string().required("Message required"),
 });
